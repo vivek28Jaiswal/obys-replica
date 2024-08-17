@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffff;
+    font-family: "plain light";
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    background-color: #0B0B0B;
+    position: relative;
+}
+.page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+}
+.loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    padding: 17vh 5.5vw;
+    background-color: #0B0B0B;
+}
+.line{
+    gap: 5vw;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.countdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.countdown h5, .countdown h6{
+    margin-bottom: 2.5vw;
+    margin-left: 2vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    font-size: 3.2vw;
+}
+.countdown h5{
+    width: 4.5vw;
+    /* background-color: red; */
+    text-align: right;
+}
+.line h1{
+    font-weight: 700;
+    font-size: 7vw;
+    text-transform: uppercase;
+}
+.line h2{
+    margin-left: -50px;
+    height: 14vh;
+    text-align: center;
+    font-size: 6vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+}
+@keyframes nowAnime{
+    0%{
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #ffff;
+        color: #ffff;
+        font-weight: 500;
+        opacity: 1;  
+    }
+    48%{
+        font-family: "plain light";
+        -webkit-text-stroke: 1px #ffff;
+        color: #ffff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    50%{
+        -webkit-text-stroke: 1px #ffff;
+        font-family: "silk serif";
+        font-weight: 500;
+        color: transparent;
+        opacity: 1;
+    }
+    100%{
+        -webkit-text-stroke: 1px #ffff;
+        font-family: "silk serif";
+        font-weight: 500;
+        color: transparent;
+        opacity: 0;
+    }
+}
