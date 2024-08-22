@@ -146,6 +146,15 @@ html,body{
     width: 72%;
     margin-left: 28%;
 }
+.centerText::before{
+    content: "01";
+    font-family: "silk serif";
+    font-size: 3.2vw;
+    font-weight: 100;
+    position: absolute;
+    top: 0%;
+    left: -15%;
+}
 .upText{
     overflow: hidden;
 }
@@ -179,7 +188,7 @@ html,body{
     right: 0;
     height: 68vh;
     width: 72vw;
-    /* background-image: url(./assets/ShowReel.jpg); */
+    background-image: url(./assets/ShowReel.jpg);
     /* background-color: red;0 */
 }
 .video-container video{
@@ -203,8 +212,8 @@ html,body{
     justify-content: center;
     position: absolute;
     z-index: 9;
-    height: 150px;
-    width: 150px;
+    height: 140px;
+    width: 140px;
     border-radius: 50%;
     background-color: #FFA63D;
 }
@@ -232,6 +241,16 @@ html,body{
     font-weight: 600;
     text-transform: uppercase;
     font-size: 7.3vw;
+    position: relative;
+}
+.page4Content h1::before{
+    content: "03";
+    font-family: "silk serif";
+    font-size: 3.2vw;
+    font-weight: 100;
+    position: absolute;
+    top: 0%;
+    left: -15%;
 }
 .bottomline{
     margin-top: 10vh;
@@ -282,12 +301,123 @@ html,body{
     font-size: 1.6vw;
 }
 .honorby .diff{
+    display: flex;
+    align-items: center;
     /* background-color: red; */
     font-size: .95vw;
     width: 35%;
 }
 .page5{
+    position: relative;
     height: 100vh;
     width: 100%;
-    background-color: #646060;
+    background-color: #151515;
+    margin-top: 15vh;
+}
+.moving-text, .moving-text2{
+    line-height: 12vh;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+.moving-text h1{
+    margin-right: 16PX;
+    /* background-color: red; */
+    display: inline-block;
+    font-size: 7.8vw;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px #ffff;
+    color: transparent;
+    font-weight: 100;
+    animation-name: movingTxt;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.moving-text2 h1{
+    margin-right: 16px;
+    /* background-color: red; */
+    display: inline-block;
+    font-size: 7.8vw;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px #ffff;
+    color: transparent;
+    font-weight: 100;
+    animation-name: movingTxt;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+@keyframes movingTxt{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(calc(-100% - 20px));
+    }
+}
+span{
+    font-style: italic;
+    font-family: "silk serif";
+    -webkit-text-stroke: 1px #ffff;
+    color: transparent;
+}
+footer{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #151515;
+}
+.footer-container{
+    position: relative;
+    margin-left: 28%;
+    width: 67vw;
+    /* background-color: red; */
+}
+.footer-container h1{
+    position: relative;
+    font-size: 7.3vw;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.footer-container h1::before{
+    content: "04";
+    font-family: "silk serif";
+    font-size: 3.2vw;
+    font-weight: 100;
+    position: absolute;
+    top: 0%;
+    left: -15%;
+}
+.footerUnderline{
+    margin-top: 10vh;
+    height: 2px;
+    width: 100%;
+    background-color: #8A8A8A;
+}
+.parentBox{
+    padding: 6.5vw 0;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+.box h6{
+    margin-bottom: 2.5vh;
+    font-size: 1vw;
+    font-weight: 600;
+}
+.box h4{
+    line-height: 3.8vh;
+    font-size: 1.7vw;
+    font-weight: 100;
+}
+.footerUnderline2{
+    margin-top: 4vh;
+    height: 2px;
+    width: 100%;
+    background-color: #8A8A8A;
+}
+.footer-container p{
+    margin-top: 4vh;
+    font-size: 1.1vw;
 }
