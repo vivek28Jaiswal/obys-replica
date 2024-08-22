@@ -146,7 +146,7 @@ html,body{
     width: 72%;
     margin-left: 28%;
 }
-.centerText::before{
+.zero-one::before{
     content: "01";
     font-family: "silk serif";
     font-size: 3.2vw;
@@ -184,6 +184,7 @@ html,body{
     background-color: #151515;
 }
 .video-container{
+    top: -1.5%;
     position: absolute;
     right: 0;
     height: 68vh;
@@ -223,7 +224,36 @@ html,body{
 .page3{
     min-height: 100vh;
     width: 100%;
-    background-color: #333;
+    background-color: #151515;
+    /* background-color: #333; */
+}
+.page3top{
+    padding: 4vw 0;
+    position: relative;
+    margin-left: 28%;
+    width: 67vw;
+    /* background-color: red; */
+}
+.page3top h1{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 7.3vw;
+    position: relative;
+}
+.page3top h1::before{
+    content: "02";
+    font-family: "silk serif";
+    font-size: 3.2vw;
+    font-weight: 100;
+    position: absolute;
+    top: 0%;
+    left: -15%;
+}
+.projectUnderline{
+    margin-top: 10vh;
+    height: 2px;
+    width: 100%;
+    background-color: #8A8A8A;
 }
 .page4{
     position: relative;
