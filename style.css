@@ -13,15 +13,11 @@ html,body{
     background-color: #151515;
     position: relative;
 }
-.cursor{
-    height: 2.5vw;
-    width: 2.5vw;
-    border-radius: 50%;
-    border: 1px solid #ffffffb5;
-    position: fixed;
-    z-index: 111;
+.mousefollower{
+    border: 2px solid #fff;
+    background-color: #ffff;
+    scale: 2;
     mix-blend-mode: difference;
-    transform: translate(-50%,-50%);
 }
 .loader{
     height: 100%;
@@ -222,6 +218,7 @@ html,body{
     font-size: 1.8vw;
 }
 .page3{
+    margin-bottom: 35vh;
     min-height: 100vh;
     width: 100%;
     background-color: #151515;
@@ -254,6 +251,106 @@ html,body{
     height: 2px;
     width: 100%;
     background-color: #8A8A8A;
+}
+.page3 .img-containers{
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    padding: 3vw;
+    /* background-color: red; */
+}
+.page3 .img-div{ 
+    margin: 2vw 1vw;
+    flex-shrink: 0; 
+    overflow: hidden;
+    position: relative;
+    height: 76vh;
+    width: 31vw;
+    /* background-color: rosybrown; */
+}
+.page3 .img-div:nth-child(1){ 
+    height: 58vh;
+    width: 23vw;
+}
+.img-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.page3Circle1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22.5vw;
+    width: 22.5vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+.circle-inner-text{
+    scale: 0;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.4s;
+}
+.circle-inner-text p{
+    scale: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    font-size: 1.05vw;
+    color: #0B0B0B;
+    opacity: 1;
+    transition: all ease 0.4s;
+    transition-delay: 0.45s;
+}
+.page3Circle1:hover .circle-inner-text{
+    scale: 1;
+}
+.page3Circle1:hover .circle-inner-text p{
+    scale: 1;
+    opacity: 1;
+}
+.page3Circle2:hover .circle-inner-text{
+    scale: 1;
+}
+.page3Circle2:hover .circle-inner-text p{
+    scale: 1;
+    opacity: 1;
+}
+.page3Circle2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22.5vw;
+    width: 22.5vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 2.5%;
+}
+.page3Circle1 svg, .page3Circle2 svg{
+    width: 28%;
+}
+.page3Circle2 .rotate{
+    rotate: -45deg;
+}
+._canvas_container{
+    z-index: 999 !important;
+    pointer-events: none;
 }
 .page4{
     position: relative;
