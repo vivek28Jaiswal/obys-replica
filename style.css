@@ -173,36 +173,54 @@ html,body{
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 7.2vw;
+    /* z-index: 999; */
+}
+/* .mousePoint{
+    z-index: 999;
+    position: relative;
+} */
+.flag{
+    opacity: 0;
+    height: 25vw;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%,-50%);
 }
 .page2{
+    position: relative;
     height: 100vh;
     width: 100%;
     background-color: #151515;
 }
 .video-container{
-    top: -1.5%;
+    /* top: -1.5%; */
+    /* position: relative; */
     position: absolute;
-    right: 0;
+    left: 28%;
     height: 68vh;
     width: 72vw;
     background-image: url(./assets/ShowReel.jpg);
-    /* background-color: red;0 */
+    background-position: center;
+    background-size: cover;
+    /* background-color: red; */
 }
 .video-container video{
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 0;
 }
-.video-container img{
+/* .video-container img{
     position: absolute;
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
-}
+} */
 .video-cursor{
-    right: 20%;
+    left: 70%;
     top: -15%;
     display: flex;
     align-items: center;
@@ -315,7 +333,7 @@ html,body{
     color: #0B0B0B;
     opacity: 1;
     transition: all ease 0.4s;
-    transition-delay: 0.45s;
+    transition-delay: 0.3s;
 }
 .page3Circle1:hover .circle-inner-text{
     scale: 1;
@@ -484,7 +502,7 @@ html,body{
         transform: translateX(calc(-100% - 20px));
     }
 }
-span{
+.moving-text span, .moving-text2 span{
     font-style: italic;
     font-family: "silk serif";
     -webkit-text-stroke: 1px #ffff;
@@ -502,10 +520,15 @@ footer{
     /* background-color: red; */
 }
 .footer-container h1{
+    font-family: "plain light";
     position: relative;
     font-size: 7.3vw;
     font-weight: 600;
+    /* background-color: red; */
+    height: 20vh;
+    width: 100%;
     text-transform: uppercase;
+    transition: all ease .5;
 }
 .footer-container h1::before{
     content: "04";

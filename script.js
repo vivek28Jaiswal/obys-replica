@@ -104,12 +104,12 @@ function loader() {
   );
 }
 function customCursor() {
-    Shery.mouseFollower({
-        //Parameters are optional.
-        skew: true,
-        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-        duration: 1,
-      });
+  Shery.mouseFollower({
+    //Parameters are optional.
+    skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
   Shery.makeMagnet(".navpart2 h4, .menu-opener__square", {});
 }
 function sheryAnimation() {
@@ -150,8 +150,137 @@ function sheryAnimation() {
     gooey: true,
   });
 }
+function videoPlaying() {
+  var videoContainer = document.querySelector(".video-container");
+  var videoCrsr = document.querySelector(".video-cursor");
+  var playvideo = document.querySelector(".video-container video");
+
+  videoContainer.addEventListener("mouseenter", function () {
+    videoContainer.addEventListener("mousemove", function (dets) {
+      gsap.to(".mousefollower", {
+        opacity: 0,
+      });
+      gsap.to(".video-cursor", {
+        left: dets.x - 500,
+        y: dets.y - 100,
+      });
+    });
+  });
+  videoContainer.addEventListener("mouseleave", function () {
+    gsap.to(".mousefollower", {
+      opacity: 1,
+    });
+    gsap.to(".video-cursor", {
+      left: "70%",
+    });
+  });
+
+  // play and pause video by clicking code
+  var flag = 0;
+  videoContainer.addEventListener("click", function () {
+    if (flag == 0) {
+      playvideo.play();
+      playvideo.style.opacity = 1;
+      document.querySelector(
+        ".video-cursor"
+      ).innerHTML = `<i class="ri-pause-large-fill"></i>`;
+      gsap.to(videoCrsr, {
+        scale: 0.5,
+      });
+      flag = 1;
+    } else {
+      playvideo.pause();
+      playvideo.style.opacity = 1;
+      document.querySelector(
+        ".video-cursor"
+      ).innerHTML = `<i class="ri-play-large-fill"></i>`;
+      gsap.to(videoCrsr, {
+        scale: 1,
+      });
+      flag = 0;
+    }
+  });
+}
+function flagAnimation() {
+  document.addEventListener("mousemove", function (dets) {
+    gsap.to(".flag", {
+      x: dets.x,
+      y: dets.y,
+    });
+  });
+  var mousePoint = document.querySelector(".mousePoint");
+  mousePoint.addEventListener("mouseenter", function () {
+    gsap.to(".flag", {
+      opacity: 1,
+    });
+  });
+  mousePoint.addEventListener("mouseleave", function () {
+    gsap.to(".flag", {
+      opacity: 0,
+    });
+  });
+}
+function footerAnimation() {
+  const footerText = document.querySelector(".italictxt")
+
+  const intialStyle = {
+    fontFamily: 'plain light',
+    fontWeight: '600',
+    webkitTextStroke: 'none',
+    color: 'white',
+  };
+  const afterHover = {
+    fontFamily: 'silk serif',
+    fontWeight: "100",
+    webkitTextStroke: "1px white",
+    color: "transparent",
+  };
+
+  footerText.addEventListener("mouseenter", function () {
+    footerText.style.fontFamily = afterHover.fontFamily;
+    footerText.style.fontWeight = afterHover.fontWeight;
+    footerText.style.webkitTextStroke = afterHover.webkitTextStroke;
+    footerText.style.color = afterHover.color;
+
+    // gsap.from(footerText, {
+    //   opacity: 0,
+    //   delay: .3,
+    //   duration: 1,
+    //   onStart: function () {
+    //     $('.italictxt').textillate({ in: { effect: 'fadeInRight' } });
+    //     footerText.style.fontFamily = afterHover.fontFamily;
+    //     footerText.style.fontWeight = afterHover.fontWeight;
+    //     footerText.style.webkitTextStroke = afterHover.webkitTextStroke;
+    //     footerText.style.color = afterHover.color;
+    //   }
+    // })
+  });
+  footerText.addEventListener("mouseleave", function () {
+    footerText.style.fontFamily = intialStyle.fontFamily;
+    footerText.style.fontWeight = intialStyle.fontWeight;
+    footerText.style.webkitTextStroke = intialStyle.webkitTextStroke;
+    footerText.style.color = intialStyle.color;
+
+    // gsap.to(footerText, {
+    //   delay: .3,
+    //   duration: 1,
+    //   onStart: function () {
+    //     $('.italictxt').textillate({ out: { effect: 'fadeOut' } });
+    //     footerText.style.fontFamily = intialStyle.fontFamily;
+    //     footerText.style.fontWeight = intialStyle.fontWeight;
+    //     footerText.style.webkitTextStroke = intialStyle.webkitTextStroke;
+    //     footerText.style.color = intialStyle.color;
+    //   }
+    // })
+  });
+
+}
 
 sheryAnimation();
 loader();
 customCursor();
 smooths();
+videoPlaying();
+flagAnimation();
+footerAnimation();
+
