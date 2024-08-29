@@ -180,12 +180,12 @@ html,body{
     position: relative;
 } */
 .flag{
-    opacity: 0;
+    display: none;
     height: 25vw;
     position: absolute;
     top: 0%;
     left: 0%;
-    transform: translate(-50%,-50%);
+    transform: translate(50%,50%);
 }
 .page2{
     position: relative;
@@ -291,6 +291,16 @@ html,body{
     height: 58vh;
     width: 23vw;
 }
+.page3 .img-div:nth-child(7){ 
+    height: 58vh;
+    width: 23vw;
+}
+.page3 .img-div:nth-child(5){ 
+    margin-top: 8%;
+}
+.page3 .img-div:nth-child(9){ 
+    margin-top: 8%;
+}
 .img-div img{
     height: 100%;
     width: 100%;
@@ -365,6 +375,62 @@ html,body{
 }
 .page3Circle2 .rotate{
     rotate: -45deg;
+}
+.page3Circle3{
+    margin-top: 20%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22.5vw;
+    width: 22.5vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 2.5%;
+}
+
+.page3Circle3:hover .circle-inner-text{
+    scale: 1;
+}
+.page3Circle3:hover .circle-inner-text p{
+    scale: 1;
+    opacity: 1;
+}
+.page3Circle3 svg, .page3Circle2 svg{
+    width: 28%;
+}
+.page3Circle3 .rotate{
+    rotate: 270deg;
+}
+.project-container{
+    height: 65vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.allProjectCircle{
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 23vw;
+    width: 23vw;
+    background-color: #FFA63D;
+    border-radius: 50%;
+    transition: all ease 0.2s;
+}
+.allProjectCircle:hover{
+    scale: .92;
+}
+.allProjectCircle h2{
+    font-weight: 500;
+    font-size: 1vw;
+}
+.allProjectCircle p{
+    font-size: 1vw;
+    font-family: "silk serif";
 }
 ._canvas_container{
     z-index: 999 !important;

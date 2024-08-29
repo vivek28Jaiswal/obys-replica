@@ -208,16 +208,21 @@ function flagAnimation() {
       y: dets.y,
     });
   });
+
+  var MovingFlag = document.querySelector(".flag");
+
+  var intialflag = {
+    display : "block",
+  }
+  var Finalflag = {
+    display : "none",
+  }
   var mousePoint = document.querySelector(".mousePoint");
   mousePoint.addEventListener("mouseenter", function () {
-    gsap.to(".flag", {
-      opacity: 1,
-    });
+    MovingFlag.style.display = intialflag.display;
   });
   mousePoint.addEventListener("mouseleave", function () {
-    gsap.to(".flag", {
-      opacity: 0,
-    });
+    MovingFlag.style.display = Finalflag.display;
   });
 }
 function footerAnimation() {
