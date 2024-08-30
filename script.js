@@ -38,6 +38,19 @@ function smooths() {
   ScrollTrigger.refresh();
 }
 function loader() {
+  function disableScroll() {
+    // Get the current page scroll position
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft =
+      window.pageXOffset || document.documentElement.scrollLeft;
+
+    // if any scroll is attempted, set this to the previous value
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+  }
+  disableScroll();
+
   var tl = gsap.timeline();
   tl.from(".line h1", {
     y: 150,
@@ -102,6 +115,12 @@ function loader() {
     },
     "-=2"
   );
+  tl.to(".loader",{
+    onStart:function enableScroll() {
+      window.onscroll = function() {};
+      enableScroll();  
+  },
+  })
 }
 function customCursor() {
   Shery.mouseFollower({
@@ -215,14 +234,14 @@ function flagAnimation() {
     // top: "0%",
     // left: "0%",
     // transform: "translate(-50%,-50%)",
-    display : "inline-block",
-  }
+    display: "inline-block",
+  };
   var Finalflag = {
     // top: "0%",
     // left: "0%",
     // transform: "translate(-50%,-50%)",
-    display : "none",
-  }
+    display: "none",
+  };
   var mousePoint = document.querySelector(".mousePoint");
   mousePoint.addEventListener("mouseenter", function () {
     MovingFlag.style.display = intialflag.display;
@@ -238,61 +257,50 @@ function flagAnimation() {
   });
 }
 function footerAnimation() {
-  const footerText = document.querySelector(".italictxt")
+  var clutter = "";
+  var clutter2 = "";
+  document
+    .querySelector("#footer-text h1")
+    .textContent.split("")
+    .forEach(function (elem) {
+      clutter += `<span>${elem}</span>`;
+    });
+  document.querySelector("#footer-text h1").innerHTML = clutter;
+  document
+    .querySelector("#footer-text h2")
+    .textContent.split("")
+    .forEach(function (elem) {
+      clutter2 += `<span>${elem}</span>`;
+    });
+  document.querySelector("#footer-text h2").innerHTML = clutter2;
 
-  const intialStyle = {
-    fontFamily: 'plain light',
-    fontWeight: '600',
-    webkitTextStroke: 'none',
-    color: 'white',
-  };
-  const afterHover = {
-    fontFamily: 'silk serif',
-    fontWeight: "100",
-    webkitTextStroke: "1px white",
-    color: "transparent",
-  };
-
-  footerText.addEventListener("mouseenter", function () {
-    footerText.style.fontFamily = afterHover.fontFamily;
-    footerText.style.fontWeight = afterHover.fontWeight;
-    footerText.style.webkitTextStroke = afterHover.webkitTextStroke;
-    footerText.style.color = afterHover.color;
-
-    // gsap.from(footerText, {
-    //   opacity: 0,
-    //   delay: .3,
-    //   duration: 1,
-    //   onStart: function () {
-    //     $('.italictxt').textillate({ in: { effect: 'fadeInRight' } });
-    //     footerText.style.fontFamily = afterHover.fontFamily;
-    //     footerText.style.fontWeight = afterHover.fontWeight;
-    //     footerText.style.webkitTextStroke = afterHover.webkitTextStroke;
-    //     footerText.style.color = afterHover.color;
-    //   }
-    // })
-  });
-  footerText.addEventListener("mouseleave", function () {
-    footerText.style.fontFamily = intialStyle.fontFamily;
-    footerText.style.fontWeight = intialStyle.fontWeight;
-    footerText.style.webkitTextStroke = intialStyle.webkitTextStroke;
-    footerText.style.color = intialStyle.color;
-
-    // gsap.to(footerText, {
-    //   delay: .3,
-    //   duration: 1,
-    //   onStart: function () {
-    //     $('.italictxt').textillate({ out: { effect: 'fadeOut' } });
-    //     footerText.style.fontFamily = intialStyle.fontFamily;
-    //     footerText.style.fontWeight = intialStyle.fontWeight;
-    //     footerText.style.webkitTextStroke = intialStyle.webkitTextStroke;
-    //     footerText.style.color = intialStyle.color;
-    //   }
-    // })
-  });
-
+  document
+    .querySelector("#footer-text")
+    .addEventListener("mouseenter", function () {
+      gsap.to("#footer-text h1 span", {
+        opacity: 0,
+        stagger: 0.05,
+      });
+      gsap.to("#footer-text h2, #footer-text h2 span", {
+        delay: 0.3,
+        opacity: 1,
+        stagger: 0.1,
+      });
+    });
+  document
+    .querySelector("#footer-text")
+    .addEventListener("mouseleave", function () {
+      gsap.to("#footer-text h1, #footer-text h1 span", {
+        opacity: 1,
+        stagger: 0.1,
+        delay: 0.3,
+      });
+      gsap.to("#footer-text h2 span", {
+        opacity: 0,
+        stagger: 0.05,
+      });
+    });
 }
-
 sheryAnimation();
 loader();
 customCursor();
@@ -300,4 +308,3 @@ smooths();
 videoPlaying();
 flagAnimation();
 footerAnimation();
-
