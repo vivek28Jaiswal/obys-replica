@@ -212,17 +212,29 @@ function flagAnimation() {
   var MovingFlag = document.querySelector(".flag");
 
   var intialflag = {
-    display : "block",
+    // top: "0%",
+    // left: "0%",
+    // transform: "translate(-50%,-50%)",
+    display : "inline-block",
   }
   var Finalflag = {
+    // top: "0%",
+    // left: "0%",
+    // transform: "translate(-50%,-50%)",
     display : "none",
   }
   var mousePoint = document.querySelector(".mousePoint");
   mousePoint.addEventListener("mouseenter", function () {
     MovingFlag.style.display = intialflag.display;
+    // MovingFlag.style.top = intialflag.top;
+    // MovingFlag.style.left = intialflag.left;
+    // MovingFlag.style.transform = intialflag.transform;
   });
   mousePoint.addEventListener("mouseleave", function () {
     MovingFlag.style.display = Finalflag.display;
+    // MovingFlag.style.top = Finalflag.top;
+    // MovingFlag.style.left = Finalflag.left;
+    // MovingFlag.style.transform = Finalflag.transform;
   });
 }
 function footerAnimation() {

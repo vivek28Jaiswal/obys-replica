@@ -99,6 +99,7 @@ html,body{
     text-align: right;
 }
 .page1{
+    position: relative;
     height: 100vh;
     width: 100%;
     background-color: #151515;
@@ -185,7 +186,7 @@ html,body{
     position: absolute;
     top: 0%;
     left: 0%;
-    transform: translate(50%,50%);
+    /* transform: translate(50%,50%); */
 }
 .page2{
     position: relative;
@@ -377,7 +378,8 @@ html,body{
     rotate: -45deg;
 }
 .page3Circle3{
-    margin-top: 20%;
+    margin-left: 9%;
+    margin-top: 24%;
     position: relative;
     display: flex;
     align-items: center;
