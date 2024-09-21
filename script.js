@@ -191,6 +191,7 @@ function videoPlaying() {
     });
     gsap.to(".video-cursor", {
       left: "70%",
+      top: "15%",
     });
   });
 
