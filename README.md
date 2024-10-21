@@ -2,7 +2,8 @@
 
 This project is a frontend clone of the Obys Agency website, showcasing modern web development techniques and interactive design elements.
 
-![HomeSS](docs/Home.png)
+![obyssss](https://github.com/user-attachments/assets/6e9a76b2-3ff7-424b-9846-ac781002cfba)
+
 
 ## Features
 
